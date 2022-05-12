@@ -21,7 +21,7 @@ signal.signal(signal.SIGINT, signal_handler)
 WHITEFIELD_PATH = "../../whitefield/"
 CONFIG_PATH_OT = "../config/wf_ot_v1_8.cfg"
 SIMULATION_OUTPUTS = "../simulation_outputs"
-CASCODA_PATH = "../cascoda/cascoda/"
+CASCODA_PATH = "../ot-wf-results-gen/cascoda/"
 
 
 def create_backup_dirs(config_file, folders=["log", "pcap"]):
