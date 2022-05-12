@@ -1,0 +1,40 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v4.1.0
+      hooks:
+        - id: check-yaml
+        - id: trailing-whitespace
+        - id: end-of-file-fixer
+        - id: check-added-large-files
+          name: check-add-large-files (notebooks)
+          files: \.ipynb$
+          args: [ '--maxkb=1000' ]
+        - id: check-added-large-files
+          name: check-add-large-files (images)
+          files: \.(jpg|png|bmp|tif)$
+          args: [ '--maxkb=1000' ]
+        - id: check-added-large-files
+          name: check-add-large-files (not notebooks or images)
+          files: ^.+$(?<!\.jpg)(?<!\.png)(?<!\.ipynb)(?<!\.bmp)(?<!\.tif)
+          args: [ '--maxkb=500' ]
+    - repo: https://github.com/psf/black
+      rev: 22.1.0
+      hooks:
+        - id: black
+          language_version: python3
+    - repo: https://github.com/pycqa/isort
+      rev: 5.10.1
+      hooks:
+        - id: isort
+    - repo: https://gitlab.com/pycqa/flake8
+      rev: 3.9.2
+      hooks:
+        - id: flake8
+    - repo: https://github.com/stfc/pre-commit-hooks
+      rev: v0.3.1
+      hooks:
+        - id: check-missing-requirements
+        - id: check-mypy-import-errors
+        - id: check-pylint-import-errors
