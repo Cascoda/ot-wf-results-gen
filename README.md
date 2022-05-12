@@ -14,27 +14,27 @@ This project was part of A4I Round 6 funding and was conducted in collaboration 
 
 ## Installation
 
-Ensure the cascoda and whitefield repositories are structured at the same directory level in relation to each other.
+Ensure the ot-wf-results-gen and whitefield repositories are structured at the same directory level in relation to each other.
 
 ```text
 .
-├── cascoda
+├── ot-wf-results-gen
 └── whitefield
 ```
 
 ### Install dependencies in a virtual environment
 
-In the root directory of the cascoda repository. Ensure the `pyproject.toml` file exists.
+In the root directory of the ot-wf-results-gen repository. Ensure the `pyproject.toml` file exists.
 1. Run `poetry install` to create a venv virtual environment and install this package and its dependencies there (add `--no-dev` flag to exclude dev dependencies)
 2. Ensure the python version being used in virtual env is correct with `poetry env info`
 
 ### Whitefield Setup
 
-To setup whitefield (after cloning and storing in the correct directory structure in relation to this cascoda repo) follow the [build instructions](https://github.com/Cascoda/whitefield/tree/ot-integration#setup-instructions).
+To setup whitefield (after cloning and storing in the correct directory structure in relation to this ot-wf-results-gen repo) follow the [build instructions](https://github.com/Cascoda/whitefield/tree/ot-integration#setup-instructions).
 
 ### Register end node addresses to produce correct simulation runs via whitefield
 
-To produce correct simulation results and to be able to analyse the simulations in WireShark / TShark / this cascoda repo. Whitefield needs to register end node addresses for each node in the simulation.
+To produce correct simulation results and to be able to analyse the simulations in WireShark / TShark / this ot-wf-results-gen repo. Whitefield needs to register end node addresses for each node in the simulation.
 
 Before running all of the simulations using this tool it is advised to run a single simulation in the whitefield repo with `./invoke_whitefield config/wf_ot.cfg`, and ensure all of the nodes have had an extended address generated for them.
 
